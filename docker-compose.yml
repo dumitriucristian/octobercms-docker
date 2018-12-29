@@ -1,5 +1,7 @@
 version: '3.3'
+
 services:
+
    db:
       image: mysql:5.7
       volumes:
@@ -23,7 +25,6 @@ services:
      image: aspendigital/octobercms:latest
      ports:
        - "80:80"
-     restart: always
      volumes:
      - ./htdocs:/var/www/html/
      environment:
@@ -31,6 +32,8 @@ services:
        DB_NAME: octobercms
        DB_USER: root
        DB_PASSWORD: root
-
+       TZ: Europe/Bucharest
 volumes:
     db_data:
+     
+
